@@ -8,6 +8,7 @@ component{
 	function index(event,rc,prc){
 
 		var strData = "{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}";
+		//var strData = "{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {{Jason|Malina|Sara}|Williams|Davis}";
 
 		var regex = "(?<=\{)(.*?)(?=\})";
 
@@ -18,7 +19,7 @@ component{
 		abort;
 
         var match = REMatchNoCase( "{(.*?)}", strData );
-        dd = spintax.REMatchGroup( regex, strData );
+        dd = spintax.REMatchGroup( "/\{(((?>[^\{\}]+)|(?R))*)\}/x", strData );
         dump(dd);
 
         dump(match);

@@ -3,29 +3,23 @@
 */
 component{
 	
-	/**
-	* Constructor
-	*/
 	any function init(){
 		
 		return this;
 	}
 
-    public string function spin( required string strData ){
+    public string function spin( required string strData, required string pattern = "{(.*?)}" ){
 
-        var match = REMatchNoCase( "{(.*?)}", arguments.strData );
+        var match = REMatchNoCase( arguments.pattern, arguments.strData );
         for( m in match ){
             arguments.strData = replace( arguments.strData, m, process( m ) )
         }
         return arguments.strData;
     }
 
-    private string function process( required string strData ){
+    private string function process( strData, pattern = "(?<=\{)(.*?)(?=\})" ){
 
-        // this regex matches {xxx|YYY|aaa}
-        var regex = "(?<=\{)(.*?)(?=\})";
-
-        var matches = REMatchGroup( regex, arguments.strData );
+        var matches = REMatchGroup( arguments.pattern, arguments.strData );
 
         var tmpArr = listToArray( matches[1], "|" );
         createObject( "java", "java.util.Collections" ).Shuffle( tmpArr );
@@ -34,11 +28,6 @@ component{
 
     }
 
-    /**
-    * Gets the given group of a captured expression.
-    *
-    * 
-    */
     public array function REMatchGroup( required string Pattern, required string Text, numeric Group="0" ) {
 
         //  Define the local scope. 
