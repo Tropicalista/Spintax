@@ -1,9 +1,9 @@
 {
     "name":"spintax",
     "slug":"spintax",
-    "version":"1.0.0",
+    "version":"1.1.0",
     "author":"Francesco Pepe",
-    "location":"Tropicalista/spintax#v1.0.0",
+    "location":"Tropicalista/spintax#v1.1.0",
     "homepage":"https://github.com/Tropicalista/spintax",
     "documentation":"https://github.com/Tropicalista/spintax",
     "repository":{
@@ -11,12 +11,14 @@
         "URL":"https://github.com/Tropicalista/spintax"
     },
     "bugs":"https://github.com/Tropicalista/spintax/issues",
-    "slug":"spintax",
     "shortDescription":"ColdBox module to interact with Facebook api",
     "type":"modules",
     "scripts":{
         "postVersion":"package set location='Tropicalista/spintax#v`package version`'",
         "onRelease":"publish",
         "postPublish":"!git push && !git push --tags"
+    },
+    "testbox":{
+        "runner":"http://myproject.local:56972/tests/runner.cfm"
     }
 }
