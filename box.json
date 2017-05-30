@@ -11,7 +11,7 @@
         "URL":"https://github.com/Tropicalista/spintax"
     },
     "bugs":"https://github.com/Tropicalista/spintax/issues",
-    "shortDescription":"ColdBox module to interact with Facebook api",
+    "shortDescription":"ColdBox module to spin text",
     "type":"modules",
     "scripts":{
         "postVersion":"package set location='Tropicalista/spintax#v`package version`'",
