@@ -7,11 +7,15 @@ component{
 
 	function index(event,rc,prc){
 
+
 		var strData = "{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {Smith|Williams|Davis}";
 		//var strData = "{Hello|Howdy|Hola} to you, {Mr.|Mrs.|Ms.} {{Jason|Malina|Sara}|Williams|Davis}";
 
 		var regex = "(?<=\{)(.*?)(?=\})";
 
+		for(i=1;i LTE 9;i=i+1){
+			dump(spintax.spin( strData ));
+		}
 
 		f = spintax.spin( strData );
 
