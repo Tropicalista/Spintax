@@ -1,0 +1,1 @@
+This module is a helper class to process Spintax strings
